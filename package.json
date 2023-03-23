@@ -1,0 +1,11 @@
+{
+  "name": "@fosk/open-table-of-contents",
+  "module": "src/build.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.5.0"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
+  }
+}
