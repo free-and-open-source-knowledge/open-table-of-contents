@@ -1,0 +1,30 @@
+name: main
+
+on:
+  - push
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/bun.lockb') }}
+
+      - name: Install dependencies
+        run: |
+          bun install
+
+      - name: Verify contents have been compiled
+        run: |
+          bun cli.ts verify

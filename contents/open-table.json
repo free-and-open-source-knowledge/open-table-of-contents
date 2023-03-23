@@ -95,6 +95,11 @@
       "name": "Calculus",
       "domain": "MATHS",
       "slug": "CALCULUS"
+    },
+    {
+      "name": "Linear Algebra",
+      "domain": "MATHS",
+      "slug": "LINEAR_ALGEBRA"
     }
   ]
 }

@@ -1,10 +1,12 @@
 
+import { Domain } from "domain";
 import { DomainSlug } from "../domains.js";
 import { AbstractSubject } from "./subjects.js";
 
 export enum MathsSubjectEnum {
   PRECALCULUS = "PRECALCULUS",
   CALCULUS = "CALCULUS",
+  LINEAR_ALGEBRA = "LINEAR_ALGEBRA",
 }
 
 
@@ -26,5 +28,10 @@ export const SUBJECTS: SubjectMap = {
     name: "Calculus",
     domain: DomainSlug.MATHS,
     slug: MathsSubjectEnum.CALCULUS,
+  },
+  [MathsSubjectEnum.LINEAR_ALGEBRA]: {
+    name: "Linear Algebra",
+    domain: DomainSlug.MATHS,
+    slug: MathsSubjectEnum.LINEAR_ALGEBRA,
   },
 };

@@ -7,8 +7,8 @@ import { SUBJECTS as PHI_SUBJECTS } from "./src/subjects/phi.js";
 import { SUBJECTS as MATH_SUBJECTS } from "./src/subjects/maths.js";
 import { buildJson } from "./src/openTable.js";
 
-export const MINIFIED_JSON_PATH = import.meta.dir + "/contents/open-table-of-contents.min.json";
-export const JSON_PATH = import.meta.dir + "/contents/open-table-of-contents.json"
+export const MINIFIED_JSON_PATH = import.meta.dir + "/contents/open-table.min.json";
+export const JSON_PATH = import.meta.dir + "/contents/open-table.json"
 
 const getContents = () => {
   const subjects = [
@@ -62,4 +62,9 @@ program
   .command("verify")
   .action(verify);
 
-program.parse();
+try {
+  program.parse();
+} catch (error) {
+  console.log((error as Error).message);
+  process.exit(1)
+}
